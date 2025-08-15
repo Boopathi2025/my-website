@@ -1,6 +1,7 @@
 body {
     line-height: 1.6;
-    border: 1px;
+    border: 1px solid;
+    /* added 'solid' so border shows */
     border-radius: 1.5rem;
 }
 
@@ -13,7 +14,8 @@ header h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     margin: 1.25rem;
-    font-weight: 1.25rem;
+    font-weight: 600;
+    /* corrected font-weight */
 }
 
 .navigator {
@@ -29,10 +31,13 @@ header h1 {
 
 #search {
     all: unset;
+    display: inline-block;
+    width: 100%;
     height: 1.2rem;
-    width: auto;
     background: white;
     border-radius: 0.25rem;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
 }
 
 .container2 a:hover,
@@ -42,7 +47,10 @@ header h1 {
 }
 
 .image img {
-    width: 400px;
+    width: 100%;
+    /* scale image on small screens */
+    max-width: 400px;
+    /* keep original max size */
     height: auto;
     border-radius: 1rem;
     border: 1px solid red;
@@ -66,7 +74,6 @@ header h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px;
 }
 
 table caption {
@@ -79,11 +86,11 @@ table th {
     text-align: left;
     font-size: larger;
     font-weight: bolder;
-    border-bottom: 1.75rem 1px solid;
+    border-bottom: 1px solid;
 }
 
 table td {
-    border-bottom: 1.75rem 1px solid;
+    border-bottom: 1px solid;
 }
 
 table tr:nth-child(even) {
@@ -95,7 +102,8 @@ table tr:nth-child(odd) {
 }
 
 label {
-    padding-left: 50%;
+    padding-left: 0;
+    /* removed huge left padding */
 }
 
 form {
@@ -104,7 +112,8 @@ form {
     background: rgb(196, 191, 191);
     padding: 2px;
     border-radius: 1rem;
-    margin-right: +3%;
+    margin-right: 3%;
+    /* removed '+' */
 }
 
 .con {
@@ -113,26 +122,32 @@ form {
     gap: 0.5rem;
     justify-content: left;
     align-items: left;
-    font-weight: 600px;
+    font-weight: 600;
+    /* removed 'px' */
 }
 
 .con textarea {
-    width: 400%;
+    width: 100%;
+    /* corrected huge 400% */
     outline: none;
     padding: 0.5rem 0.7rem;
     border: 1px solid rgb(250, 244, 244);
-    margin-left: 50%;
+    margin-left: 0;
+    /* removed 50% offset */
+    box-sizing: border-box;
 }
 
 input {
     border-radius: 0.5rem;
-    width: max-content;
     width: 100%;
-    padding-right: 200%;
-    margin-left: 50%;
+    /* keep full width */
+    padding-right: 1rem;
+    /* reasonable padding */
+    margin-left: 0;
+    /* removed huge offset */
     height: 1.5rem;
+    box-sizing: border-box;
 }
-
 
 .btn {
     display: block;
