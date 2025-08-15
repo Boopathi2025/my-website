@@ -1,56 +1,76 @@
+/* ====== General Styles ====== */
 body {
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    border: 1px solid;
-    /* added 'solid' so border shows */
-    border-radius: 1.5rem;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #222;
 }
 
 header {
     background: rgb(137, 214, 214);
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #aaa;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 header h1 {
+    margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    margin: 1.25rem;
     font-weight: 600;
-    /* corrected font-weight */
+    font-size: 1.8rem;
 }
 
+/* ====== Navigation ====== */
 .navigator {
-    padding: 10px;
+    padding: 0.5rem;
     background: rgb(147, 148, 165);
 }
 
 .navigator .container2 {
     display: flex;
-    justify-content: left;
-    gap: 2rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.navigator a {
+    text-decoration: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navigator a:hover,
+.navigator a:focus-visible {
+    background: rgb(231, 224, 231);
+    color: #222;
+    transform: translateY(-2px);
 }
 
 #search {
     all: unset;
     display: inline-block;
-    width: 100%;
-    height: 1.2rem;
+    width: 200px;
+    max-width: 100%;
+    height: 1.5rem;
     background: white;
     border-radius: 0.25rem;
     padding: 0 0.5rem;
     box-sizing: border-box;
 }
 
-.container2 a:hover,
-.container2 a:focus-visible {
-    background: rgb(231, 224, 231);
-    transform: translateY(-1px);
+/* ====== Main Content ====== */
+main {
+    padding: 1rem 2rem;
 }
 
+/* ----- Image ----- */
 .image img {
     width: 100%;
-    /* scale image on small screens */
     max-width: 400px;
-    /* keep original max size */
     height: auto;
     border-radius: 1rem;
     border: 1px solid red;
@@ -62,13 +82,15 @@ header h1 {
     margin-top: 0.5rem;
 }
 
+/* ----- Table ----- */
 .table-wrap {
     overflow-x: auto;
     background: rgb(242, 235, 243);
     border: 1px solid rgb(241, 235, 235);
     border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 2px 16px rgb(95, 88, 88);
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 table {
@@ -78,19 +100,20 @@ table {
 
 table caption {
     font-weight: bolder;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 table th {
     background: rgb(99, 97, 97);
+    color: white;
     text-align: left;
-    font-size: larger;
-    font-weight: bolder;
-    border-bottom: 1px solid;
+    padding: 0.5rem;
 }
 
 table td {
-    border-bottom: 1px solid;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
 }
 
 table tr:nth-child(even) {
@@ -101,76 +124,112 @@ table tr:nth-child(odd) {
     background: rgb(247, 244, 244);
 }
 
-label {
-    padding-left: 0;
-    /* removed huge left padding */
-}
-
+/* ====== Forms ====== */
 form {
     border: 1px solid black;
-    margin-top: 1rem;
     background: rgb(196, 191, 191);
-    padding: 2px;
+    padding: 1rem;
     border-radius: 1rem;
-    margin-right: 3%;
-    /* removed '+' */
+    margin: 1rem 0;
 }
 
 .con {
     margin-bottom: 1rem;
     display: grid;
     gap: 0.5rem;
-    justify-content: left;
-    align-items: left;
+}
+
+.con label {
     font-weight: 600;
-    /* removed 'px' */
 }
 
-.con textarea {
+input, textarea {
     width: 100%;
-    /* corrected huge 400% */
-    outline: none;
     padding: 0.5rem 0.7rem;
-    border: 1px solid rgb(250, 244, 244);
-    margin-left: 0;
-    /* removed 50% offset */
-    box-sizing: border-box;
-}
-
-input {
     border-radius: 0.5rem;
-    width: 100%;
-    /* keep full width */
-    padding-right: 1rem;
-    /* reasonable padding */
-    margin-left: 0;
-    /* removed huge offset */
-    height: 1.5rem;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
 .btn {
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto 0 auto;
     border-radius: 0.75rem;
     background: rgb(104, 53, 151);
     color: white;
     border: none;
-    transition: transform 1.5s ease, opacity 1.5s ease;
-    padding: 0.65rem 0.75rem;
+    padding: 0.65rem 1rem;
     cursor: pointer;
     text-align: center;
-    margin-top: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .btn:hover,
 .btn:focus-visible {
-    opacity: 0.93;
-    transform: translateY(-1px);
+    opacity: 0.9;
+    transform: translateY(-2px);
     background: rgb(194, 68, 194);
 }
 
+/* ====== Footer ====== */
 footer {
     text-align: center;
-    color: rgb(41, 38, 38);
+    padding: 1rem;
+    background: #eee;
+    color: #222;
+}
+
+/* ====== Dark Theme ====== */
+body.dark-theme {
+    background: #222;
+    color: #eee;
+}
+
+body.dark-theme header {
+    background: #444;
+    color: #eee;
+}
+
+body.dark-theme .navigator {
+    background: #555;
+}
+
+body.dark-theme .navigator a {
+    color: #fff;
+}
+
+body.dark-theme table th {
+    background: #666;
+    color: #fff;
+}
+
+body.dark-theme table tr:nth-child(even) {
+    background: #444;
+}
+
+body.dark-theme table tr:nth-child(odd) {
+    background: #333;
+}
+
+body.dark-theme form {
+    background: #333;
+    color: #eee;
+    border-color: #555;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+    .navigator .container2 {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+
+    #search {
+        width: 100%;
+    }
 }
