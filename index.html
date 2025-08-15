@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Skills Test</title>
+    <link rel="stylesheet" href="styles1.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1> Welcome to the Web Skills Test </h1>
+        </div>
+    </header>
+    <nav class="navigator">
+        <div class="container2">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <label>
+                <input type="text" placeholder="Search Here" id="search">
+            </label>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <h2>Students</h2>
+            <figure class="image">
+                <img src="Image 1.jpeg" alt="Img.1">
+                <figcaption>This image represents the Students Skill Banner</figcaption>
+            </figure>
+            <div class="table-wrap">
+                <table>
+                    <caption>Here are the Students list:</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Skill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sanjay</td>
+                            <td>19</td>
+                            <td>Communication</td>
+                        </tr>
+                        <tr>
+                            <td>Boopathi</td>
+                            <td>20</td>
+                            <td>Front End</td>
+                        </tr>
+                        <tr>
+                            <td>Hema</td>
+                            <td>18</td>
+                            <td>Back End</td>
+                        </tr>
+                        <tr>
+                            <td>Thamizh</td>
+                            <td>18</td>
+                            <td>UI/UX</td>
+                        </tr>
+                        <tr>
+                            <td>Deepak</td>
+                            <td>20</td>
+                            <td>Full Stack</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <h2>Contact</h2>
+
+        <form action="#" method="post" novalidate>
+            <div class="con">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+
+            <div class="con">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="con">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+    </main>
+    <footer>
+        <div class="footer">
+            <small>&copy; <span id="year"></span>Web Skill Test</small>
+        </div>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+body {
+    line-height: 1.6;
+    border: 1px;
+    border-radius: 1.5rem;
+}
+
+header {
+    background: rgb(137, 214, 214);
+    border-bottom: 1px solid;
+}
+
+header h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 1.25rem;
+    font-weight: 1.25rem;
+}
+
+.navigator {
+    padding: 10px;
+    background: rgb(147, 148, 165);
+}
+
+.navigator .container2 {
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+}
+
+#search {
+    all: unset;
+    height: 1.2rem;
+    width: auto;
+    background: white;
+    border-radius: 0.25rem;
+}
+
+.container2 a:hover,
+.container2 a:focus-visible {
+    background: rgb(231, 224, 231);
+    transform: translateY(-1px);
+}
+
+.image img {
+    width: 400px;
+    height: auto;
+    border-radius: 1rem;
+    border: 1px solid red;
+}
+
+.image figcaption {
+    color: darkmagenta;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: rgb(242, 235, 243);
+    border: 1px solid rgb(241, 235, 235);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 16px rgb(95, 88, 88);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+table caption {
+    font-weight: bolder;
+    margin-bottom: 1.25rem;
+}
+
+table th {
+    background: rgb(99, 97, 97);
+    text-align: left;
+    font-size: larger;
+    font-weight: bolder;
+    border-bottom: 1.75rem 1px solid;
+}
+
+table td {
+    border-bottom: 1.75rem 1px solid;
+}
+
+table tr:nth-child(even) {
+    background: rgb(204, 200, 200);
+}
+
+table tr:nth-child(odd) {
+    background: rgb(247, 244, 244);
+}
+
+label {
+    padding-left: 50%;
+}
+
+form {
+    border: 1px solid black;
+    margin-top: 1rem;
+    background: rgb(196, 191, 191);
+    padding: 2px;
+    border-radius: 1rem;
+    margin-right: +3%;
+}
+
+.con {
+    margin-bottom: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    justify-content: left;
+    align-items: left;
+    font-weight: 600px;
+}
+
+.con textarea {
+    width: 400%;
+    outline: none;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgb(250, 244, 244);
+    margin-left: 50%;
+}
+
+input {
+    border-radius: 0.5rem;
+    width: max-content;
+    width: 100%;
+    padding-right: 200%;
+    margin-left: 50%;
+    height: 1.5rem;
+}
+
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    background: rgb(104, 53, 151);
+    color: white;
+    border: none;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+    padding: 0.65rem 0.75rem;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    opacity: 0.93;
+    transform: translateY(-1px);
+    background: rgb(194, 68, 194);
+}
+
+footer {
+    text-align: center;
+    color: rgb(41, 38, 38);
+}
