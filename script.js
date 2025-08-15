@@ -1,102 +1,80 @@
-<script>
-// 1️⃣ Welcome alert
-window.addEventListener('load', () => {
+// Show welcome alert on page load
+window.addEventListener("load", () => {
     alert("Welcome to the Skills Test!");
 });
 
-// 2️⃣ Form validation for Contact form
-const contactForm = document.querySelector('form'); // your contact form
-const contactMessageDiv = document.createElement('div');
-contactMessageDiv.style.marginTop = '1rem';
-contactForm.appendChild(contactMessageDiv);
+// Form validation
+const form = document.querySelector("form");
+const formMessage = document.createElement("p");
+form.appendChild(formMessage);
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent default submission
 
-    if (!name || !email || !message) {
-        contactMessageDiv.style.color = 'red';
-        contactMessageDiv.textContent = "Please fill in all fields!";
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        formMessage.textContent = "Please fill out all fields.";
+        formMessage.style.color = "red";
     } else {
-        contactMessageDiv.style.color = 'green';
-        contactMessageDiv.textContent = "Form submitted successfully!";
-        contactForm.reset();
+        formMessage.textContent = "Form submitted successfully!";
+        formMessage.style.color = "green";
+        form.reset();
     }
 });
 
-// 3️⃣ Change Theme button
-const themeBtn = document.createElement('button');
+// Change Theme button
+const themeBtn = document.createElement("button");
 themeBtn.textContent = "Change Theme";
-themeBtn.style.display = "block";
-themeBtn.style.margin = "2rem auto";
+themeBtn.style.margin = "1rem";
 themeBtn.style.padding = "0.5rem 1rem";
 themeBtn.style.cursor = "pointer";
-document.body.insertBefore(themeBtn, document.querySelector('main'));
+document.body.insertBefore(themeBtn, document.querySelector("main"));
 
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
 });
 
-// Dark theme CSS
-const style = document.createElement('style');
-style.textContent = `
-.dark-theme { background: #121212; color: #f0f0f0; }
-.dark-theme header { background: #1f1f1f; }
-.dark-theme .navigator { background: #2a2a2a; }
-.dark-theme table { color: #f0f0f0; }
-.dark-theme table th { background: #333; }
-.dark-theme table tr:nth-child(even) { background: #444; }
-.dark-theme table tr:nth-child(odd) { background: #2a2a2a; }
-.dark-theme form { background: #333; color: #f0f0f0; }
-.dark-theme input, .dark-theme textarea { background: #555; color: #f0f0f0; border: 1px solid #888; }
-.dark-theme .btn, .dark-theme button { background: #6200ea; color: #fff; }
-`;
-document.head.appendChild(style);
+// Student Counter
+const studentTable = document.querySelector("tbody");
+const studentCountDisplay = document.createElement("p");
+studentCountDisplay.style.fontWeight = "600";
+studentCountDisplay.style.margin = "0.5rem 0";
+studentCountDisplay.textContent = Total Students: ${studentTable.rows.length};
+document.querySelector("section").insertBefore(studentCountDisplay, document.querySelector(".table-wrap"));
 
-// 4️⃣ Student Counter
-const studentTable = document.querySelector('table tbody');
-const counterDiv = document.createElement('div');
-counterDiv.style.margin = "1rem 0";
-counterDiv.style.fontWeight = "bold";
-document.querySelector('main').insertBefore(counterDiv, studentTable);
-
-function updateStudentCount() {
-    const count = studentTable.querySelectorAll('tr').length;
-    counterDiv.textContent = `Total Students: ${count}`;
-}
-updateStudentCount();
-
-// 5️⃣ Add Student Form (Separate from Contact form)
-const addFormContainer = document.createElement('div');
-addFormContainer.style.marginTop = '2rem';
-addFormContainer.innerHTML = `
+// Add Student form
+const addStudentForm = document.createElement("form");
+addStudentForm.style.marginTop = "1rem";
+addStudentForm.innerHTML = `
     <h3>Add Student</h3>
-    <form id="addStudentForm">
-        <input type="text" id="studentName" placeholder="Name" required />
-        <input type="number" id="studentAge" placeholder="Age" required />
-        <input type="text" id="studentSkill" placeholder="Skill" required />
-        <button type="submit">Add Student</button>
-    </form>
+    <input type="text" id="sName" placeholder="Name" required>
+    <input type="number" id="sAge" placeholder="Age" required>
+    <input type="text" id="sSkill" placeholder="Skill" required>
+    <button type="submit" class="btn">Add Student</button>
 `;
-document.querySelector('main').appendChild(addFormContainer);
+document.querySelector("section").appendChild(addStudentForm);
 
-const addForm = document.getElementById('addStudentForm');
-addForm.addEventListener('submit', (e) => {
+addStudentForm.addEventListener("submit", function(e){
     e.preventDefault();
-    const name = document.getElementById('studentName').value.trim();
-    const age = document.getElementById('studentAge').value.trim();
-    const skill = document.getElementById('studentSkill').value.trim();
 
-    if (name && age && skill) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${name}</td><td>${age}</td><td>${skill}</td>`;
-        studentTable.appendChild(tr);
-        updateStudentCount();
-        addForm.reset();
+    const sName = document.getElementById("sName").value.trim();
+    const sAge = document.getElementById("sAge").value.trim();
+    const sSkill = document.getElementById("sSkill").value.trim();
+
+    if(sName && sAge && sSkill){
+        const row = document.createElement("tr");
+        row.innerHTML = <td>${sName}</td><td>${sAge}</td><td>${sSkill}</td>;
+        studentTable.appendChild(row);
+
+        // Update student count
+     studentCountDisplay.textContent = Total Students: ${studentTable.rows.length};
+
+
+        addStudentForm.reset();
     } else {
-        alert("Fill all fields to add a student!");
+        alert("Please fill all fields to add a student.");
     }
 });
-</script>
