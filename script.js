@@ -1,4 +1,3 @@
-// Smooth scrolling for nav links
 document.querySelectorAll('.navigator a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -15,15 +14,12 @@ document.querySelectorAll('.navigator a').forEach(link => {
     });
 });
 
-
-// 1️⃣ Welcome alert on page load
 window.addEventListener("load", () => {
     alert("Welcome to the Skills Test!");
     updateStudentCount();
     displaySubmittedData();
 });
 
-// 2️⃣ Form validation & localStorage
 const form = document.querySelector("form");
 const formMessage = document.createElement("p");
 form.appendChild(formMessage);
@@ -40,8 +36,6 @@ form.addEventListener("submit", function(e) {
     } else {
         formMessage.textContent = "Form submitted successfully!";
         formMessage.style.color = "green";
-
-        // Save to localStorage
         const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
         submissions.push({ name, email, message });
         localStorage.setItem("submissions", JSON.stringify(submissions));
@@ -51,7 +45,6 @@ form.addEventListener("submit", function(e) {
     }
 });
 
-// 3️⃣ Theme toggle button
 const themeButton = document.createElement("button");
 themeButton.textContent = "Change Theme";
 themeButton.style.display = "block";
@@ -64,7 +57,6 @@ themeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 });
 
-// 4️⃣ Student counter
 const counter = document.createElement("p");
 counter.style.textAlign = "center";
 counter.style.fontWeight = "600";
@@ -75,7 +67,6 @@ function updateStudentCount() {
     counter.textContent = `Total Students: ${totalStudents}`;
 }
 
-// 5️⃣ Add Student form
 const addStudentForm = document.createElement("form");
 addStudentForm.innerHTML = `
     <h3>Add Student</h3>
@@ -105,7 +96,6 @@ addStudentForm.addEventListener("submit", function(e) {
     }
 });
 
-// 6️⃣ LocalStorage Display
 const submittedDataSection = document.createElement("section");
 submittedDataSection.innerHTML = `<h2>Submitted Messages</h2><div id="submittedData"></div>`;
 document.querySelector("main").appendChild(submittedDataSection);
